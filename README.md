@@ -38,3 +38,6 @@ Node specs:
 
 
 <img width="1287" height="874" alt="mano-homelab-docker-diagram" src="https://github.com/user-attachments/assets/04452dfc-3ad4-476c-8c4d-fb8ac8dc586d" />
+
+1. [scripts/up.sh](https://github.com/manosriram/homelab/blob/master/scripts/up.sh): Does `docker compose up <container_name> -d` recursively to all *.docker-compose.yml files in the given directory.
+2. [scripts/down.sh](https://github.com/manosriram/homelab/blob/master/scripts/down.sh): Does `docker compose down` recursively to all *.docker-compose.yml files in the given directory.
