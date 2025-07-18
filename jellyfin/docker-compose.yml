@@ -1,0 +1,25 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    env_file:
+      - .env
+    volumes:
+      - ${JELLYFIN_CONFIG_PATH}:/config
+      - ${JELLYFIN_MOVIES_PATH}:/data/movies # Movies path for radarr
+      - ${JELLYFIN_TV_PATH}:/data/tv # Tv shows path for sonarr
+
+      # - /mnt/ssd1/jellyfin/config:/config
+      # - /mnt/ssd1/jellyfin/media/movies:/data/movies # Movies path for radarr
+      # - /mnt/ssd1/jellyfin/media/tv:/data/tv # Tv shows path for sonarr
+    deploy:
+      update_config:
+        order: start-first
+    ports:
+      - 8096:8096
+      - 8920:8920
+      - 7359:7359/udp
+      - 1900:1900/udp
+    devices:
+      - /dev/dri:/dev/dri
+    restart: always

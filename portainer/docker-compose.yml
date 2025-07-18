@@ -1,0 +1,18 @@
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce:latest
+    env_file:
+      - .env
+    volumes:
+      - ${PORTAINER_DATA_PATH}:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      update_config:
+        order: start-first
+    ports:
+      - 9443:9443
+      - 9000:9000
+    restart: always
+volumes:
+  data:

@@ -1,0 +1,14 @@
+services:
+  heimdall:
+    image: lscr.io/linuxserver/heimdall:latest
+    container_name: heimdall
+    env_file:
+      - .env
+    volumes:
+      - ${HEIMDALL_CONFIG_PATH}:/config
+    deploy:
+      update_config:
+        order: start-first
+    ports:
+      - 8082:80
+    restart: always

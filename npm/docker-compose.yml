@@ -1,0 +1,22 @@
+services:
+  nginx-proxy-manager:
+      image: 'jc21/nginx-proxy-manager:latest'
+      container_name: nginxproxymanager
+      env_file:
+        - .env
+      volumes:
+        - ${NPM_DATA_PATH}:/data
+        - ${NPM_LETSENCRYPT_PATH}:/etc/letsencrypt
+      deploy:
+        update_config:
+          order: start-first
+      ports:
+        - '80:80'
+        - '81:81'
+        - '443:443'
+      networks:
+        - proxy-network
+      restart: always
+
+networks:
+  proxy-network:

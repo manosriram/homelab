@@ -1,0 +1,14 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ${HOME}/vaultwarden/data:/data/
+    deploy:
+      update_config:
+        order: start-first
+    ports:
+      - "8060:80"

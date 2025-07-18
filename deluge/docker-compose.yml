@@ -1,0 +1,24 @@
+services:
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    env_file:
+      - .env
+    volumes:
+      - ${DELUGE_CONFIG_PATH}:/config
+      - ${DELUGE_DOWNLOADS_PATH}:/downloads
+    deploy:
+      update_config:
+        order: start-first
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881/udp
+      - 58846:58846
+    restart: always
+    networks: 
+      - arr 
+
+networks:
+  arr: 
+    driver: bridge

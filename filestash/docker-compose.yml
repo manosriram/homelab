@@ -1,0 +1,19 @@
+services:
+  filestash:
+    container_name: filestash
+    image: machines/filestash
+    restart: always
+    env_file:
+      - .env
+    volumes:
+    - ${FILESTASH_FILE_SYSTEM_PATH}:/fs
+    - ${JELLYFIN_MOVIES_PATH}:/jellyfin
+    - filestash_state:/app/data/state/
+    deploy:
+      update_config:
+        order: start-first
+    ports:
+    - "8334:8334"
+
+volumes:
+  filestash_state: {}
