@@ -10,6 +10,7 @@ services:
     volumes:
       - /var/cache/ntfy:/var/cache/ntfy
       - /etc/ntfy:/etc/ntfy
+      - ${NTFY_PATH}:/var/lib/ntfy
     deploy:
       update_config:
         order: start-first

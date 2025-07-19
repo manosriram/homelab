@@ -1,0 +1,12 @@
+services:
+  watchtower:
+    image: containrrr/watchtower:latest # Use the latest Watchtower image
+    container_name: watchtower # Name the container for easy identification
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Mount the Docker socket to allow Watchtower to interact with Docker daemon
+    env_file:
+      - .env
+    restart: always
+    # Optional: Label containers you want Watchtower to ignore (uncomment and adjust if needed)
+    # labels:
+    #   - "com.centurylinklabs.watchtower.enable=false"
