@@ -6,12 +6,10 @@ services:
       - .env
     volumes:
       - ${JELLYFIN_CONFIG_PATH}:/config
-      - ${JELLYFIN_MOVIES_PATH}:/data/movies # Movies path for radarr
-      - ${JELLYFIN_TV_PATH}:/data/tv # Tv shows path for sonarr
-
-      # - /mnt/ssd1/jellyfin/config:/config
-      # - /mnt/ssd1/jellyfin/media/movies:/data/movies # Movies path for radarr
-      # - /mnt/ssd1/jellyfin/media/tv:/data/tv # Tv shows path for sonarr
+      - ${JELLYFIN_MOVIES_PATH}:/data/movies
+      - ${JELLYFIN_TV_PATH}:/data/tv
+      - ${JELLYFIN_TUBESYNC_PATH}:/data/tubesync
+      - ${JELLYFIN_TUBEARCHIVIST_PATH}:/data/tubearchivist
     deploy:
       update_config:
         order: start-first

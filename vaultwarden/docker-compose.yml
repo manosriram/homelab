@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ${HOME}/vaultwarden/data:/data/
+      - ${VAULTWARDEN_DATA_PATH}:/data/
     deploy:
       update_config:
         order: start-first
