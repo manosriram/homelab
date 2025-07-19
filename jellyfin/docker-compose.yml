@@ -8,8 +8,6 @@ services:
       - ${JELLYFIN_CONFIG_PATH}:/config
       - ${JELLYFIN_MOVIES_PATH}:/data/movies
       - ${JELLYFIN_TV_PATH}:/data/tv
-      - ${JELLYFIN_TUBESYNC_PATH}:/data/tubesync
-      - ${JELLYFIN_TUBEARCHIVIST_PATH}:/data/tubearchivist
     deploy:
       update_config:
         order: start-first
