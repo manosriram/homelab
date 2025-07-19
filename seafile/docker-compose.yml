@@ -1,0 +1,28 @@
+services:
+  mariadb:
+    container_name: seafile-mariadb
+    image: mariadb:10.6
+    env_file:
+      - .env
+    volumes:
+      - ${MARIADB_PATH}:/var/lib/mysql
+    restart: always
+
+  memcached:
+    container_name: seafile-memcached
+    image: memcached:latest
+    restart: unless-stopped
+
+  seafile:
+    container_name: seafile-server
+    image: seafileltd/seafile-mc:latest
+    ports:
+      - "8800:80"
+    env_file:
+      - .env
+    volumes:
+      - ${SEAFILE_DATA_PATH}:/shared
+    depends_on:
+      - mariadb
+      - memcached
+    restart: always
