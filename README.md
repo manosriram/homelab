@@ -83,7 +83,9 @@ I use simple shell scripts to manage the Docker Compose services:
 * **`scripts/up.sh`**:
     This script recursively executes `docker compose up <container_name> -d` for all `*.docker-compose.yml` files found in a given directory, bringing services online.
     * [View `up.sh` on GitHub](https://github.com/manosriram/homelab/blob/master/scripts/up.sh)
+    * Move this script to `/usr/local/bin/homeup` for easier access.
 
 * **`scripts/down.sh`**:
     This script recursively executes `docker compose down` for all `*.docker-compose.yml` files, taking services offline.
     * [View `down.sh` on GitHub](https://github.com/manosriram/homelab/blob/master/scripts/down.sh)
+    * Move this script to `/usr/local/bin/homedown` for easier access.
