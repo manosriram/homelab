@@ -1,0 +1,12 @@
+services:
+    mirotalk:
+        image: mirotalk/p2p:latest
+        container_name: mirotalk
+        hostname: mirotalk
+        volumes:
+            - ./.env:/src/.env:ro
+            # - /fs/containers/mirotalk/app:/src/app/:ro
+            # - ./public/:/src/public/:ro
+        restart: always
+        ports:
+            - '8118:${PORT}'

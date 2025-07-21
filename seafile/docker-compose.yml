@@ -1,6 +1,6 @@
 services:
   mariadb:
-    container_name: seafile-mariadb
+    container_name: seafile-db
     image: mariadb:10.6
     env_file:
       - .env

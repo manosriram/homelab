@@ -5,9 +5,6 @@ services:
     env_file:
       - .env
     volumes:
-      # - ${HOME}/bazarr/config:/config
-      # - ${HOME}/jellyfin/media/movies:/movies
-      # - ${HOME}/jellyfin/media/tv:/tv
       - ${BAZARR_CONFIG_PATH}:/config
       - ${JELLYFIN_MOVIES_PATH}:/movies
       - ${JELLYFIN_TV_PATH}:/tv

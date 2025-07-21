@@ -8,10 +8,6 @@ services:
       - ${SONARR_CONFIG_PATH}:/config
       - ${JELLYFIN_TV_PATH}:/tv
       - ${DELUGE_DOWNLOADS_PATH}:/downloads
-
-      # - /mnt/ssd1/sonarr/config:/config
-      # - /mnt/ssd1/jellyfin/media/tv/:/tv
-      # - /mnt/ssd1/downloads/:/downloads
     deploy:
       update_config:
         order: start-first

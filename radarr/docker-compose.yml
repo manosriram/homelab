@@ -8,10 +8,6 @@ services:
       - ${RADARR_CONFIG_PATH}:/config
       - ${JELLYFIN_MOVIES_PATH}:/movies
       - ${DELUGE_DOWNLOADS_PATH}:/downloads
-
-      # - /mnt/ssd1/radarr/config:/config
-      # - /mnt/ssd1/jellyfin/media/movies/:/movies
-      # - /mnt/ssd1/downloads/:/downloads
     deploy:
       update_config:
         order: start-first
