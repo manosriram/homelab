@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     volumes:
-    - ${FILESTASH_FILE_SYSTEM_PATH}:/fs
+    - ${FILESTASH_FILE_SYSTEM_PATH}:/data
     - ${JELLYFIN_MOVIES_PATH}:/jellyfin
     - filestash_state:/app/data/state/
     deploy:

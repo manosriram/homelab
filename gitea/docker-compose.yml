@@ -1,0 +1,22 @@
+services:
+  server:
+    image: docker.gitea.com/gitea:latest
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    volumes:
+      - /fs/containers/gitea/data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "9088:3000"
+      - "222:22"
+    restart: always
+    networks:
+      - gitea
+
+networks:
+  gitea:
+    external: false
+
