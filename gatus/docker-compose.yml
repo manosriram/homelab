@@ -1,0 +1,8 @@
+services:
+  gatus:
+    image: twinproduction/gatus:latest
+    ports:
+      - 9900:8080
+    volumes:
+      - /fs/containers/gatus/config:/config
+      - /fs/containers/gatus/data:/data
