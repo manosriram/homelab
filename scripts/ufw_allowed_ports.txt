@@ -57,18 +57,11 @@
 # Vaultwarden
 8060
 
-8118
-8443
-5347
-5280
-10000/udp
-4443/udp
-
-1025
-
 # Gitea
 9088
 
+# Gatus
 9900
 
+# Linkding
 9902
