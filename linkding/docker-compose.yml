@@ -8,4 +8,4 @@ services:
       - /fs/containers/linkding/data:/etc/linkding/data
     env_file:
       - .env
-    restart: unless-stopped
+    restart: always

@@ -2,7 +2,6 @@ services:
   filestash:
     container_name: filestash
     image: machines/filestash
-    restart: always
     env_file:
       - .env
     volumes:
@@ -14,6 +13,7 @@ services:
         order: start-first
     ports:
     - "8334:8334"
+    restart: always
 
 volumes:
   filestash_state: {}

@@ -11,7 +11,7 @@ services:
   memcached:
     container_name: seafile-memcached
     image: memcached:latest
-    restart: unless-stopped
+    restart: always
 
   seafile:
     container_name: seafile-server

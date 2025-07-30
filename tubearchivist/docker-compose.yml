@@ -1,7 +1,7 @@
 services:
   tubearchivist:
     container_name: tubearchivist
-    restart: unless-stopped
+    restart: always
     image: bbilly1/tubearchivist
     ports:
       - 8040:8000
@@ -23,7 +23,7 @@ services:
   archivist-redis:
     image: redis
     container_name: archivist-redis
-    restart: unless-stopped
+    restart: always
     env_file:
       - .env
     volumes:

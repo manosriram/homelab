@@ -1,8 +1,12 @@
 services:
   gatus:
+    container_name: gatus
     image: twinproduction/gatus:latest
     ports:
       - 9900:8080
+    env_file:
+      - .env
     volumes:
-      - /fs/containers/gatus/config:/config
-      - /fs/containers/gatus/data:/data
+      - ${GATUS_CONFIG_PATH}:/config
+      - ${GATUS_DATA_PATH}:/data
+    restart: always

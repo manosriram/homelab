@@ -65,3 +65,6 @@
 
 # Linkding
 9902
+
+# Jellyseer
+5055
