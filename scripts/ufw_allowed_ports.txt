@@ -68,3 +68,6 @@
 
 # Jellyseer
 5055
+
+# ttyd
+7681
