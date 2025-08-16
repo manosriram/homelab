@@ -36,25 +36,25 @@ while ! curl -s http://localhost:11434/api/version > /dev/null; do
     sleep 1
 done
 
-# Pull the gemma2:2b model
-echo "Pulling gemma3:4b model..."
-ollama pull gemma3:4b
+# Pull the codellama:13b model
+echo "Pulling deepseek-coder:6.7b model..."
+ollama pull deepseek-coder:6.7b
 
 if [ -f "/root/Modelfile" ]; then
     echo "Creating custom model from Modelfile..."
-    ollama create brain -f /root/Modelfile
-    MODEL_NAME="brain"
+    ollama create deepseek-coder:6.7b -f /root/Modelfile
+    MODEL_NAME="deepseek-coder:6.7b"
 else
-    echo "Using default gemma3:4b model..."
-    MODEL_NAME="gemma3:4b"
+    echo "Using default deepseek-coder:6.7b model..."
+    MODEL_NAME="deepseek-coder:6.7b"
 fi
 
 # Create a script that starts the ollama run command
 cat > /tmp/console.sh << 'SCRIPT'
 #!/bin/bash
-echo "Starting Ollama console with gemma3:4b model..."
+echo "Starting Ollama console with deepseek-coder:6.7b model..."
 echo "Type your messages and press Enter. Type '/bye' to exit."
-exec ollama run brain
+exec ollama run deepseek-coder:6.7b
 SCRIPT
 
 chmod +x /tmp/console.sh

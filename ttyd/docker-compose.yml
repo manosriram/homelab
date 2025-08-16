@@ -7,7 +7,7 @@ services:
     ports:
       - "7681:7681"
     volumes:
-      - /root/.ollama:/root/.ollama  # Persist Ollama models and data
+      - /fs/.ollama:/root/.ollama  # Persist Ollama models and data
       - /fs/containers/ttyd/Modelfile:/root/Modelfile
     environment:
       - OLLAMA_HOST=0.0.0.0
