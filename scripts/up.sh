@@ -52,10 +52,10 @@ find "$TARGET_DIR" -type f -name "docker-compose.yml" -print0 | while IFS= read 
         exit 1
     fi
 
-    echo "Running 'docker compose up -d --build' in $compose_dir..."
+    echo "Running 'docker compose up -d --remove-orphans --build' in $compose_dir..."
     # Run docker compose up in detached mode (-d)
     # This command will start the services defined in the docker-compose.yml in the background
-    if docker compose up -d --build; then
+    if docker compose up -d --remove-orphans --build; then
         echo "Successfully started services for $compose_dir"
     else
         echo "Error: Failed to start services for $compose_dir"

@@ -1,6 +1,6 @@
 services:
-  seafile-db:
-    container_name: seafile-db
+  mariadb:
+    container_name: mariadb
     image: mariadb:10.6
     env_file:
       - .env
@@ -23,6 +23,6 @@ services:
     volumes:
       - ${SEAFILE_DATA_PATH}:/shared
     depends_on:
-      - seafile-db
+      - mariadb
       - memcached
     restart: always
