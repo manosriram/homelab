@@ -7,6 +7,7 @@ services:
     volumes:
     - ${FILESTASH_FILE_SYSTEM_PATH}:/data
     - ${JELLYFIN_MOVIES_PATH}:/jellyfin
+    - ${ANDROID_FS_PATH}:/androidfs
     - filestash_state:/app/data/state/
     deploy:
       update_config:

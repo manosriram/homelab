@@ -71,3 +71,9 @@
 
 # ttyd
 7681
+
+# Syncthing
+8384
+
+# Miniflux
+9908
