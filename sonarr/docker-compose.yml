@@ -7,6 +7,7 @@ services:
     volumes:
       - ${SONARR_CONFIG_PATH}:/config
       - ${JELLYFIN_TV_PATH}:/tv
+      - ${JELLYFIN_BACKED_MEDIA_PATH}:/backedup_media
       - ${DELUGE_DOWNLOADS_PATH}:/downloads
     deploy:
       update_config:

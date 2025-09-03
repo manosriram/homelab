@@ -7,6 +7,7 @@ services:
     volumes:
       - ${RADARR_CONFIG_PATH}:/config
       - ${JELLYFIN_MOVIES_PATH}:/movies
+      - ${JELLYFIN_BACKED_MEDIA_PATH}:/backedup_media
       - ${DELUGE_DOWNLOADS_PATH}:/downloads
     deploy:
       update_config:

@@ -8,6 +8,7 @@ services:
       - ${JELLYFIN_CONFIG_PATH}:/config
       - ${JELLYFIN_MOVIES_PATH}:/data/movies
       - ${JELLYFIN_TV_PATH}:/data/tv
+      - ${JELLYFIN_BACKED_MEDIA_PATH}:/data/backedup_media
     deploy:
       update_config:
         order: start-first

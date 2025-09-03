@@ -10,8 +10,8 @@ services:
         condition: service_healthy
     env_file:
       - .env
-    healthcheck:
-       test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
+    # healthcheck:
+       # test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
   db:
     image: postgres:latest
     container_name: miniflux-postgres
