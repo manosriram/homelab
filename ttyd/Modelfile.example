@@ -1,6 +1,0 @@
-# Modelfile
-FROM gemma3:4b
-
-SYSTEM """
-	Custom model context here
-"""
