@@ -1,0 +1,24 @@
+storage:
+  type: sqlite
+  path: "/data/gatus.db"
+
+# Alert slack when service goes down
+alerting:
+  slack:
+    webhook-url: "https://hooks.slack.com/services/X/Y/Z"
+    default-alert:
+      failure-threshold: 3 # Number of consecutive failures before an alert is triggered
+      send-on-resolved: true # Send a message when an alert is resolved
+      send-on-recovery: true # (Optional) Send a message when a service recovers after an incident
+
+endpoints:
+  - name: service1
+    url: https://sub.service1.com
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"
+    alerts:
+      - type: slack
+        enabled: true
+        description: "⚠️Service health check failed."
+  # Add more services here
