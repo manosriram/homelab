@@ -1,0 +1,26 @@
+services:
+  copyparty:
+    image: copyparty/ac:latest
+    container_name: copyparty
+    user: "1000:1000"
+    ports:
+      - 3923:3923
+    volumes:
+      - /fs/containers/copyparty:/cfg:z
+      - /fs/containers/copyparty/data/A:/a:z
+      - /fs/containers/copyparty/data/B:/b:z
+    command: [
+      "--cfg", "/cfg/copyparty.conf",
+      "--host", "0.0.0.0",
+      "--port", "3923"
+    ]
+    environment:
+      LD_PRELOAD: /usr/lib/libmimalloc-secure.so.NOPE
+      PYTHONUNBUFFERED: 1
+    stop_grace_period: 15s
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q 127.0.0.1:3923/?reset=/._"]
+      interval: 1m
+      timeout: 2s
+      retries: 5
+      start_period: 15s

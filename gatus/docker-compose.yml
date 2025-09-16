@@ -10,3 +10,4 @@ services:
       - ${GATUS_CONFIG_PATH}:/config
       - ${GATUS_DATA_PATH}:/data
     restart: always
+    network: host
