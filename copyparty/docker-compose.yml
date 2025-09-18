@@ -5,6 +5,7 @@ services:
     user: "1000:1000"
     ports:
       - 3923:3923
+    restart: unless-stopped
     volumes:
       - /fs/containers/copyparty:/cfg:z
       - /fs/containers/copyparty/data/A:/a:z
