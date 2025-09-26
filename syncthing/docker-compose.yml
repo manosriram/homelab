@@ -15,4 +15,4 @@ services:
       - 22000:22000/tcp # Sync protocol
       - 22000:22000/udp # Sync protocol
       - 21027:21027/udp # Discovery
-    restart: unless-stopped
+    restart: always

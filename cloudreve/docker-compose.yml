@@ -22,8 +22,6 @@ services:
       start_period: 40s
 
   postgresql:
-    # Best practice: Pin to major version.
-    # NOTE: For major version jumps, ensure data compatibility
     image: postgres:17
     container_name: cloudreve-psql
     restart: always

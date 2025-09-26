@@ -6,13 +6,12 @@ services:
     ports:
       - "9908:8080"
     depends_on:
-      db:
+      miniflux-postgres:
         condition: service_healthy
     env_file:
       - .env
-    # healthcheck:
-       # test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
-  db:
+
+  miniflux-postgres:
     image: postgres:latest
     container_name: miniflux-postgres
     volumes:

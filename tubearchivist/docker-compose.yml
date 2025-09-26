@@ -36,7 +36,7 @@ services:
   archivist-es:
     image: bbilly1/tubearchivist-es         # only for amd64, or use official es 8.18.0
     container_name: archivist-es
-    restart: unless-stopped
+    restart: always
     env_file:
       - .env
     environment:
