@@ -1,6 +1,6 @@
 services:
   syncthing:
-    image: linuxserver/syncthing:latest
+    image: linuxserver/syncthing:latest@sha256:cba7184ddfa24392a7c5b493d7676088bdc9f5c74b804472d13188f05c0465d1
     container_name: syncthing
     hostname: syncthing
     environment:

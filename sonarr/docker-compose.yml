@@ -1,6 +1,6 @@
 services:
   sonarr:
-    image: lscr.io/linuxserver/sonarr:latest
+    image: lscr.io/linuxserver/sonarr:latest@sha256:bb50bac26881613af15deb4df891e4a7cb09e3333aec20a0522cb188fb22b11d
     container_name: sonarr
     env_file:
       - .env

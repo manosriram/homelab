@@ -1,7 +1,7 @@
 services:
   portainer:
     container_name: portainer
-    image: portainer/portainer-ce:latest
+    image: portainer/portainer-ce:latest@sha256:264443d4063e0f2633f3ba210ccd69aacf07344dfc792128131dec8963df0f0a
     env_file:
       - .env
     volumes:

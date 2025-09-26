@@ -1,6 +1,6 @@
 services:
   bazarr:
-    image: lscr.io/linuxserver/bazarr:latest
+    image: lscr.io/linuxserver/bazarr:latest@sha256:e424330f048ff1401f22413e34ee11c25ac2de79b6213c6ead3f593b44626c55
     container_name: bazarr
     env_file:
       - .env
