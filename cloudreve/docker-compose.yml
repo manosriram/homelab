@@ -1,6 +1,6 @@
 services:
   cloudreve:
-    image: cloudreve/cloudreve:4.6.0
+    image: cloudreve/cloudreve:4.6.0@sha256:31a69b3654942ee7b6a8450e0f775c5e917b7105a199a9e261749c1b20189e3f
     container_name: cloudreve-backend
     depends_on:
       postgresql:
@@ -22,7 +22,7 @@ services:
       start_period: 40s
 
   postgresql:
-    image: postgres:17
+    image: postgres:17@sha256:0b6428e8c09651398137d2b3308a6ad87e73ac15fc38729891c16d942e947d3d
     container_name: cloudreve-psql
     restart: always
     env_file:
@@ -37,7 +37,7 @@ services:
       start_period: 30s
 
   redis:
-    image: redis:latest
+    image: redis:latest@sha256:acb90ced0bd769b7c04cb4c32c4494ba7b3e0ee068bdbfff0eeb0d31c2a21078
     container_name: cloudreve-redis
     restart: always
     env_file:

@@ -2,7 +2,7 @@ services:
   tubearchivist:
     container_name: tubearchivist
     restart: always
-    image: bbilly1/tubearchivist
+    image: bbilly1/tubearchivist@sha256:20ce26849d0bf00db9d85300f8205af24d4cd507dd7ab53b55d48a33544ce5b6
     ports:
       - 8040:8000
     volumes:
@@ -21,7 +21,7 @@ services:
       - archivist-redis
 
   archivist-redis:
-    image: redis
+    image: redis@sha256:acb90ced0bd769b7c04cb4c32c4494ba7b3e0ee068bdbfff0eeb0d31c2a21078
     container_name: archivist-redis
     restart: always
     env_file:
@@ -34,7 +34,7 @@ services:
       - archivist-es
 
   archivist-es:
-    image: bbilly1/tubearchivist-es         # only for amd64, or use official es 8.18.0
+    image: bbilly1/tubearchivist-es@sha256:58007d1cf7a3b9f3ae4a8e0d2798b05d9c7dd768877b1fe908fd4142da4c68b6         # only for amd64, or use official es 8.18.0
     container_name: archivist-es
     restart: always
     env_file:
