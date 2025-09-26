@@ -1,6 +1,6 @@
 services:
   nginx-proxy-manager:
-      image: 'jc21/nginx-proxy-manager:latest'
+      image: 'jc21/nginx-proxy-manager:latest@sha256:6ab097814f54b1362d5fd3c5884a01ddd5878aaae9992ffd218439180f0f92f3'
       container_name: nginxproxymanager
       env_file:
         - .env

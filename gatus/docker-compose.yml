@@ -1,7 +1,7 @@
 services:
   gatus:
     container_name: gatus
-    image: twinproduction/gatus:latest
+    image: twinproduction/gatus:latest@sha256:6a8e4815092693cbfb771c0e700a8bc4d3a6fd82a39f18065ea4889b7fde0245
     ports:
       - 9900:8080
     env_file:
