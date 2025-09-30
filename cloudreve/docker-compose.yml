@@ -22,7 +22,7 @@ services:
       start_period: 40s
 
   postgresql:
-    image: postgres:17@sha256:0b6428e8c09651398137d2b3308a6ad87e73ac15fc38729891c16d942e947d3d
+    image: postgres:17@sha256:14d1abe0b1c660ec3c7521786d1249157699ebc62b07ea84ab6aad5239f5251f
     container_name: cloudreve-psql
     restart: always
     env_file:
