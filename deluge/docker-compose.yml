@@ -1,6 +1,6 @@
 services:
   deluge:
-    image: lscr.io/linuxserver/deluge:latest@sha256:27cf98b7b5c29a7d492210b841aae6a038527e66c4a8657129939527179560d0
+    image: lscr.io/linuxserver/deluge:latest@sha256:126626b73318b81d44bf21016f402a0997515df5a917424ba18b666e8b4a2552
     container_name: deluge
     env_file:
       - .env

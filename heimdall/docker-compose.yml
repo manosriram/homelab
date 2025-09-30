@@ -1,6 +1,6 @@
 services:
   heimdall:
-    image: lscr.io/linuxserver/heimdall:latest@sha256:615557da71b2b4efdc983e40168fb671f30716183d6988126e24cd226ddd71b5
+    image: lscr.io/linuxserver/heimdall:latest@sha256:d0db2f5b7ab9907269f76f02bf7d96b95fe7f8e20c82bc60310dd2b8530c2868
     container_name: heimdall
     env_file:
       - .env
