@@ -9,7 +9,8 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - /fs/containers/syncthing/config:/config
-      - /fs/containers/syncthing/data:/data
+      # - /fs/containers/syncthing/data:/data
+      - /fs/backups:/data
     ports:
       - 8384:8384 # Web UI
       - 22000:22000/tcp # Sync protocol

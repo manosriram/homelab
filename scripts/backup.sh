@@ -14,14 +14,7 @@ mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/$(date +%d-%m-%Y-%H%M%S).log"
 
 # Paths to backup
-BACKUP_PATHS=(
-	"/fs/containers/immich/"
-	"/fs/containers/tubearchivist/"
-	"/fs/containers/vaultwarden/"
-	"/fs/containers/scripts/"
-	"/fs/containers/jellyfin/media/backedup_media"
-	"/fs/containers/syncthing/data"
-)
+BACKUP_PATHS="/fs/containers/immich/ /fs/containers/tubearchivist/ /fs/containers/vaultwarden/ /fs/containers/scripts/ /fs/backups"
 
 DAILY_HEALTHCHECKS_URL="https://hc-ping.com/5d70a7da-b8ca-4571-a059-839cff1fb6d0"
 MONTHLY_HEALTHCHECKS_URL="https://hc-ping.com/f03e366d-22a9-414a-8039-32d17b1dc632"
