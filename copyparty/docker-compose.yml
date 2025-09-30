@@ -1,6 +1,6 @@
 services:
   copyparty:
-    image: copyparty/ac:latest@sha256:01e6e858021ab5c7c790d91cacb51b556d6a92d6a5f4457617e1d221d26f0008
+    image: copyparty/ac:latest@sha256:6d997528ec5e96d68214b92f985b5d227788a5e409af11dadee1c0b7504d8ce1
     container_name: copyparty
     user: "1000:1000"
     ports:
