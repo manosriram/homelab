@@ -1,0 +1,24 @@
+services:
+  miniflux:
+    image: ${MINIFLUX_IMAGE:-miniflux/miniflux:latest}
+    container_name: miniflux
+    restart: always
+    ports:
+      - "9908:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+  db:
+    image: postgres:17
+    container_name: miniflux-postgres
+    volumes:
+      - /fs/containers/minifluxrss/psql:/var/lib/postgresql/data
+    restart: always
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux"]
+      interval: 10s
+      start_period: 30s

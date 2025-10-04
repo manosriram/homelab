@@ -1,0 +1,21 @@
+services:
+  drive:
+    image: copyparty/ac:latest@sha256:6d997528ec5e96d68214b92f985b5d227788a5e409af11dadee1c0b7504d8ce1
+    container_name: drive
+    user: "1000:1000"
+    ports:
+      - 4923:3923
+    volumes:
+      - /fs/containers/copyparty/drive:/cfg:z
+      - /fs/backups/warm/copyparty-drive:/drive:z
+    environment:
+      LD_PRELOAD: /usr/lib/libmimalloc-secure.so.NOPE
+      PYTHONUNBUFFERED: 1
+    stop_grace_period: 15s
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q 127.0.0.1:4923/?reset=/._"]
+      interval: 1m
+      timeout: 2s
+      retries: 5
+      start_period: 15s
