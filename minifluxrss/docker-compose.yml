@@ -1,6 +1,6 @@
 services:
   miniflux:
-    image: ${MINIFLUX_IMAGE:-miniflux/miniflux:latest}
+    image: ${MINIFLUX_IMAGE:-miniflux/miniflux:latest@sha256:fd6587a23884c277301307e4d70c196cd0f772fba1720b9e60051fc65a75121e}
     container_name: miniflux
     restart: always
     ports:
@@ -11,7 +11,7 @@ services:
     env_file:
       - .env
   db:
-    image: postgres:17
+    image: postgres:18@sha256:073e7c8b84e2197f94c8083634640ab37105effe1bc853ca4d5fbece3219b0e8
     container_name: miniflux-postgres
     volumes:
       - /fs/containers/minifluxrss/psql:/var/lib/postgresql/data
