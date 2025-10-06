@@ -1,3 +1,4 @@
 cache
 media
-postgres
+postgres*
+init.sql
