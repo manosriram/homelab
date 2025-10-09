@@ -1,4 +1,1 @@
 .env
-scripts/master_healthcheck.sh
-scripts/backup.sh
-scripts/db_backup.sh
