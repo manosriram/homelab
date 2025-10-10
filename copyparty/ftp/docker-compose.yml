@@ -9,6 +9,7 @@ services:
     volumes:
       - /fs/containers/copyparty/ftp:/cfg:z
       - /fs/containers/copyparty/ftp/data/A:/a:z
+      - /fs/backups/warm/metube:/youtube:z
       - /fs/containers/copyparty/ftp/data/B:/b:z
     environment:
       LD_PRELOAD: /usr/lib/libmimalloc-secure.so.NOPE
