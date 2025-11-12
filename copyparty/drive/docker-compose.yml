@@ -1,6 +1,6 @@
 services:
   drive:
-    image: copyparty/ac:latest@sha256:941de3bf7a0ed45b1f0cc2bd12fdb7c89963745e5ec5f2c9b24fc947699ad8bb
+    image: copyparty/ac:latest@sha256:0a0a8605062c70cb50b167769a461d32c409bb6f95145fc106ce0011222efa81
     container_name: drive
     user: "1000:1000"
     ports:
