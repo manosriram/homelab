@@ -11,7 +11,7 @@ services:
     env_file:
       - .env
   db:
-    image: postgres:17
+    image: postgres:18@sha256:41fc5342eefba6cc2ccda736aaf034bbbb7c3df0fdb81516eba1ba33f360162c
     container_name: miniflux-postgres
     volumes:
       - /fs/containers/minifluxrss/psql:/var/lib/postgresql/data
