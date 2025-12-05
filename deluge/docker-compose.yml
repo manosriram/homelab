@@ -7,6 +7,8 @@ services:
     volumes:
       - ${DELUGE_CONFIG_PATH}:/config
       - ${DELUGE_DOWNLOADS_PATH}:/downloads
+      - ${MEDIA_MOVIES_PATH}:/movies
+      - ${MEDIA_TV_PATH}:/tv
     deploy:
       update_config:
         order: start-first

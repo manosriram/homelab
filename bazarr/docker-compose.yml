@@ -6,8 +6,8 @@ services:
       - .env
     volumes:
       - ${BAZARR_CONFIG_PATH}:/config
-      - ${JELLYFIN_MOVIES_PATH}:/movies
-      - ${JELLYFIN_TV_PATH}:/tv
+      - ${MOVIES_MEDIA_PATH}:/movies
+      - ${TV_MEDIA_PATH}:/tv
     deploy:
       update_config:
         order: start-first

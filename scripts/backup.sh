@@ -12,6 +12,8 @@ BACKUP_PATHS="/fs/containers/immich/ /fs/containers/tubearchivist/ /fs/container
 DAILY_HEALTHCHECKS_URL="https://hc-ping.com/5d70a7da-b8ca-4571-a059-839cff1fb6d0"
 MONTHLY_HEALTHCHECKS_URL="https://hc-ping.com/f03e366d-22a9-414a-8039-32d17b1dc632"
 
+restic unlock;
+
 # Perform backup and log status
 restic backup --tag "$TAG" $BACKUP_PATHS \
 	&& echo "Backup with tag '$TAG' completed."
