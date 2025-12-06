@@ -1,3 +1,3 @@
 [submodule "restic-ui"]
 	path = restic-ui
-	url = https://github.com/username/my-library.git
+	url = https://github.com/manosriram/restic-ui
