@@ -28,11 +28,11 @@ elif [[ "$TAG" == "monthly" ]]; then
 fi
 
 # Apply retention for daily backups
-restic forget --tag daily --prune --keep-last 30 \
+restic forget --tag daily --prune --keep-last 60 \
 	&& echo "Daily retention applied." \
 	|| echo "Daily retention FAILED!"
 
 # Apply retention for monthly backups
-restic forget --tag monthly --prune --keep-last 12 \
+restic forget --tag monthly --prune --keep-last 36 \
 	&& echo "Monthly retention applied." \
 	|| echo "Monthly retention FAILED!"
