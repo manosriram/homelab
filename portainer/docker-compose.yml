@@ -15,7 +15,7 @@ services:
       - 9000:9000
     restart: always
     healthcheck:
-      test: ["CMD", "/portainer", "--health-check"]
+      test: ["CMD-SHELL", "wget -qO- https://127.0.0.1:9443/api/status --no-check-certificate >/dev/null 2>&1 || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 10
