@@ -13,7 +13,11 @@ services:
     ports:
       - "8060:80"
     healthcheck:
-      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:80/ || exit 1"]
+      test:
+        [
+          "CMD-SHELL",
+          "if command -v curl >/dev/null 2>&1; then curl -fsS http://127.0.0.1:80/ >/dev/null 2>&1; elif command -v wget >/dev/null 2>&1; then wget --spider -q http://127.0.0.1:80/; else echo 'Neither curl nor wget found in container'; exit 1; fi"
+        ]
       interval: 30s
       timeout: 5s
       retries: 5
