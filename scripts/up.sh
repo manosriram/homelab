@@ -67,4 +67,3 @@ find "$TARGET_DIR" -type f -name "docker-compose.yml" -print0 | while IFS= read 
 done
 
 echo "Script finished."
-

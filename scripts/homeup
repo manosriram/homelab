@@ -32,7 +32,7 @@ def run_compose_up(compose_file: Path):
     Changes the CWD to the file's directory for correct path resolution.
     """
     compose_dir = compose_file.parent
-    
+
     # Change directory to the location of the compose file to ensure
     # build contexts and volume paths are resolved correctly relative to the file.
     try:
@@ -90,25 +90,25 @@ def main():
     original_cwd = Path.cwd()
 
     dirs_to_process: List[Path] = []
-    
+
     if len(sys.argv) > 1:
         # 1. Argument provided: process only the specified directory.
         target_name = sys.argv[1]
         # Assume the argument is a directory name or path relative to SERVICE_ROOT_DIR
         target_dir = SERVICE_ROOT_DIR / target_name
-        
+
         logging.info(f"Targeting specific service directory: {target_dir}")
-        
+
         if not target_dir.is_dir():
             logging.error(f"Provided path is not a directory or does not exist: {target_dir}")
             sys.exit(1)
 
         dirs_to_process.append(target_dir)
-        
+
     else:
         # 2. No argument: process all top-level service directories.
         logging.info(f"Scanning all top-level service directories in {SERVICE_ROOT_DIR}...")
-        
+
         # Find all top-level service directories (e.g., /fs/containers/a, /fs/containers/b)
         top_level_services: List[Path] = [d for d in SERVICE_ROOT_DIR.iterdir() if d.is_dir()]
 
@@ -127,12 +127,12 @@ def main():
     if not dirs_to_process:
         logging.warning("No directories eligible for deployment found.")
         sys.exit(0)
-    
+
     # Deployment logic: loop over the selected (or all) directories
     for service_dir in dirs_to_process:
-        
+
         all_compose_files: List[Path] = []
-        
+
         # Recursively find ALL instances of compose files within the service directory.
         # This ensures nested compose files are still found even when targeting a single root.
         for name in COMPOSE_FILE_NAMES:
@@ -141,7 +141,7 @@ def main():
         if not all_compose_files:
             logging.warning(f"No compose files found recursively in {service_dir.name}")
             continue
-        
+
         # Process each unique compose file found
         for compose_file in all_compose_files:
             run_compose_up(compose_file)
