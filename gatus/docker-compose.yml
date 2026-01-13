@@ -10,3 +10,9 @@ services:
       - ${GATUS_CONFIG_PATH}:/config
       - ${GATUS_DATA_PATH}:/data
     restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080/health || wget --spider -q http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 10
+      start_period: 30s

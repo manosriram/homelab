@@ -15,9 +15,9 @@ services:
       PYTHONUNBUFFERED: 1
     stop_grace_period: 15s
     restart: always
-    # healthcheck:
-      # test: ["CMD-SHELL", "wget --spider -q 127.0.0.1:4923/?reset=/._"]
-      # interval: 1m
-      # timeout: 2s
-      # retries: 5
-      # start_period: 15s
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q 127.0.0.1:3923/?reset=/._"]
+      interval: 1m
+      timeout: 2s
+      retries: 5
+      start_period: 15s

@@ -17,3 +17,9 @@ services:
       - 6889:6889
       - 6889:6889/udp
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 10
+      start_period: 45s

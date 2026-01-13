@@ -12,3 +12,9 @@ services:
         order: start-first
     ports:
       - "8060:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:80/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

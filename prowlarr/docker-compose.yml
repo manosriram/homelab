@@ -12,9 +12,15 @@ services:
     ports:
       - 9696:9696
     restart: always
-    networks: 
-      - arr 
+    networks:
+      - arr
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:9696/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 10
+      start_period: 45s
 
 networks:
-  arr: 
+  arr:
     driver: bridge
