@@ -7,12 +7,6 @@ services:
       - 8090:8090
     volumes:
       - /fs/containers/beszel/data:/beszel_data
-    healthcheck:
-      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8090/ || exit 1"]
-      interval: 30s
-      timeout: 5s
-      retries: 10
-      start_period: 30s
 
   beszel-agent:
     image: henrygd/beszel-agent
@@ -29,9 +23,3 @@ services:
       KEY: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILfg+dLw2pLprXM5ZRoQAuh8hc90GXVw26L1aUzk9dOJ'
       TOKEN: 11abd-5b7d93395-119b1c-ed338ab
       HUB_URL: http://100.69.69.69:8090
-    healthcheck:
-      test: ["CMD-SHELL", "nc -z 127.0.0.1 45876 || exit 1"]
-      interval: 30s
-      timeout: 5s
-      retries: 10
-      start_period: 30s
