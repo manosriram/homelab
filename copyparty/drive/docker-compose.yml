@@ -9,6 +9,7 @@ services:
       - /fs/containers/copyparty/drive:/cfg:z
       - /fs/backups/warm/copyparty-drive:/drive:z
       - /fs/media/:/media:z
+      - /fs/downloads/:/downloads:z
     environment:
       LD_PRELOAD: /usr/lib/libmimalloc-secure.so.NOPE
       PYTHONUNBUFFERED: 1
