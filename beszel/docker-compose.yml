@@ -20,6 +20,6 @@ services:
       # - /mnt/disk/.beszel:/extra-filesystems/sda1:ro
     environment:
       LISTEN: 45876
-      KEY: ''
+      KEY: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILfg+dLw2pLprXM5ZRoQAuh8hc90GXVw26L1aUzk9dOJ'
       TOKEN: 11abd-5b7d93395-119b1c-ed338ab
       HUB_URL: http://100.69.69.69:8090
