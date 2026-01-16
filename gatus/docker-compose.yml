@@ -10,9 +10,3 @@ services:
       - ${GATUS_CONFIG_PATH}:/config
       - ${GATUS_DATA_PATH}:/data
     restart: always
-    healthcheck:
-      test: ["CMD", "/gatus", "health"]
-      interval: 30s
-      timeout: 5s
-      retries: 10
-      start_period: 30s
