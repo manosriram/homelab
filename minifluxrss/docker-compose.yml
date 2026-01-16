@@ -1,6 +1,6 @@
 services:
   miniflux:
-    image: ${MINIFLUX_IMAGE:-miniflux/miniflux:latest@sha256:02e50d5b277857e3600c14ec1a6a064a82320077914d8eb546691a5f4c1d406c}
+    image: ${MINIFLUX_IMAGE:-miniflux/miniflux:latest@sha256:1f37163a178189eba09bf0a1c96d7335aa1fa474d4f958f51e0c5ad9f8136979}
     container_name: miniflux
     restart: always
     ports:
