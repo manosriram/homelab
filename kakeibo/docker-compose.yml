@@ -1,0 +1,10 @@
+services:
+  app:
+    container_name: kakeibo
+    image: ghcr.io/manosriram/kakeibo:latest
+    volumes:
+      - /fs/containers/kakeibo/data:/app/data
+    ports:
+      - "5464:8080"
+    env_file:
+      - .env

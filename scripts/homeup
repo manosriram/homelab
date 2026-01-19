@@ -41,6 +41,13 @@ def run_compose_up(compose_file: Path):
         logging.error(f"Failed to change directory to {compose_dir}: {e}")
         return
 
+    pull_latest_image = [
+        'docker',
+        'compose',
+        '-f', str(compose_file.resolve()),
+        'pull',
+    ]
+
     # Passing the absolute path via -f is still the most explicit and reliable way.
     command = [
         'docker',
@@ -58,6 +65,12 @@ def run_compose_up(compose_file: Path):
     try:
         # check=True will raise CalledProcessError on non-zero exit code
         # capture_output=True keeps the script's output clean unless an error occurs
+        subprocess.run(
+            pull_latest_image,
+            check=True,
+            capture_output=True,
+            text=True
+        )
         subprocess.run(
             command,
             check=True,
