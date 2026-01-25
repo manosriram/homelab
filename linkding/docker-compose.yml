@@ -1,7 +1,7 @@
 services:
   linkding:
     container_name: linkding
-    image: sissbruecker/linkding:latest@sha256:e4fbafee44388d8555e34ffdc507224302989265009fc82f5f2762b789f0385a
+    image: sissbruecker/linkding:latest@sha256:61b2eb9eed8e5772a473fb7f1f8923e046cb8cbbeb50e88150afd5ff287d4060
     ports:
       - 9902:9090
     volumes:
