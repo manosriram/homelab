@@ -1,6 +1,6 @@
 services:
   beszel:
-    image: henrygd/beszel
+    image: henrygd/beszel@sha256:dac99b67c250fe5492d9c6f5d889905fa93726cf8f44eaa7bc0970c7e3ea2eeb
     container_name: beszel
     restart: unless-stopped
     ports:
@@ -9,7 +9,7 @@ services:
       - /fs/containers/beszel/data:/beszel_data
 
   beszel-agent:
-    image: henrygd/beszel-agent
+    image: henrygd/beszel-agent@sha256:137f2aefa4f8b06df8a94cc85449da6da2e1977230bfa5fdce9d0119ada19b0a
     container_name: beszel-agent
     restart: unless-stopped
     network_mode: host
