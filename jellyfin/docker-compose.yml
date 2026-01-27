@@ -1,6 +1,6 @@
 services:
   jellyfin:
-    image: lscr.io/linuxserver/jellyfin:latest@sha256:313571f253bf1035809f6856bb063904456226ef3899b96e60ee4597b3477246
+    image: lscr.io/linuxserver/jellyfin:latest@sha256:ca65e82841e9502487b04bfc234ed8ca65b52b7f48ab0bd9879e834056d0d7e7
     container_name: jellyfin
     env_file:
       - .env
