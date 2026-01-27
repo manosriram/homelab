@@ -1,7 +1,7 @@
 services:
   prowlarr:
     container_name: prowlarr
-    image: lscr.io/linuxserver/prowlarr:latest@sha256:475853535de3de8441b87c1457c30f2e695f4831228b12b6b7274e9da409d874
+    image: lscr.io/linuxserver/prowlarr:latest@sha256:d3e9307b320b6772749a2cf8fc2712e9e824c4930b034680ad4d08a9e2f25884
     env_file:
       - .env
     volumes:
